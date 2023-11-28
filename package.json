@@ -34,6 +34,7 @@
     "win32"
   ],
   "scripts": {
+    "start": "node server.js",
     "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
     "clean": "node ./src/lib/clean.js"
   },
@@ -42,7 +43,13 @@
     "node": ">=8.16.0"
   },
   "dependencies": {
-    "nan": "^2.17.0"
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nan": "^2.17.0",
+    "technicalindicators": "^3.1.0"
   },
   "keywords": [
     "talib",
