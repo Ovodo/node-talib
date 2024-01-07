@@ -35,14 +35,31 @@
   ],
   "scripts": {
     "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
-    "clean": "node ./src/lib/clean.js"
+    "clean": "node ./src/lib/clean.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "main": "build/Release/talib.node",
   "engines": {
     "node": ">=8.16.0"
   },
   "dependencies": {
-    "nan": "^2.17.0"
+    "axios": "^1.6.2",
+    "nan": "^2.17.0",
+    "talib": "^1.1.5",
+    "mongodb": "^6.3.0",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
   },
   "keywords": [
     "talib",
