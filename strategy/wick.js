@@ -45,7 +45,7 @@ const fetchMarketDataWithRetry = async (
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Main function to identify candle wicks with specified criteria
-const identifyCandleWicks = async () => {
+export const identifyCandleWicks = async () => {
   // Define start and end time for the data range (October to November 2022)
   const startTime = new Date("2022-10-01").getTime();
   const endTime = new Date("2022-11-30").getTime();
