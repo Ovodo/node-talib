@@ -34,8 +34,6 @@
     "win32"
   ],
   "scripts": {
-    "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
-    "clean": "node ./src/lib/clean.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
