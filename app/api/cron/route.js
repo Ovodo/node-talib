@@ -10,6 +10,8 @@ export async function GET() {
 
   let num = 2;
   const yes = (num += 1);
-  console.log("yes", yes);
+  let interval = setInterval(console.log("yes", yes), 2000);
+
+  yes >= 100 && clearInterval(interval);
   return NextResponse.json({ ok: true });
 }
