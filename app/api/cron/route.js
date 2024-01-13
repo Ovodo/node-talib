@@ -8,10 +8,10 @@ export async function GET() {
   //   return res.status(401).end("Unauthorized");
   // }
 
-  let num = 2;
-  const yes = (num += 1);
-  let interval = setInterval(() => console.log("yes", yes), 2000);
+  // let num = 2;
+  // const yes = (num += 1);
+  // let interval = setInterval(() => console.log("yes", yes), 2000);
 
-  yes >= 100 && clearInterval(interval);
-  return NextResponse.json({ ok: true });
+  // yes >= 100 && clearInterval(interval);
+  return NextResponse.json({ data: Date.now(), ok: true });
 }

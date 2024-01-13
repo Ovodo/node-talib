@@ -1,6 +1,10 @@
 const axios = require("axios");
 const fs = require("fs");
 const { symbols } = require("../examples/symbols");
+const TelegramBot = require("node-telegram-bot-api");
+const TOKEN = "6536370558:AAFwmAwxAqW4sbGlzpe6XvHHWfv45MrfIqg";
+const bot = new TelegramBot(TOKEN);
+const chatId = 5835833708;
 
 // Set API endpoint and symbols
 const apiEndpoint = "https://fapi.binance.com";
@@ -16,7 +20,7 @@ const fetchMarketDataWithRetry = async (
 ) => {
   try {
     const res = await axios.get(
-      `${apiEndpoint}/fapi/v1/markPriceKlines?symbol=${symbol}&interval=15m&limit=1000`,
+      `${apiEndpoint}/fapi/v1/markPriceKlines?symbol=${symbol}&interval=4h&limit=3`,
       {
         timeout: 150000, // Set the timeout to 15 seconds (adjust as needed)
       }
@@ -45,7 +49,7 @@ const fetchMarketDataWithRetry = async (
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Main function to identify candle wicks with specified criteria
-export const identifyCandleWicks = async () => {
+const identifyCandleWicks = async () => {
   // Define start and end time for the data range (October to November 2022)
   const startTime = new Date("2022-10-01").getTime();
   const endTime = new Date("2022-11-30").getTime();
@@ -91,7 +95,7 @@ export const identifyCandleWicks = async () => {
       // Check for upper wick criteria (over 5%) and green candle close (0% to 1% profit)
       if (
         lowerWick / low >
-        0.0105
+        0.07105
         // &&
         // percentageProfit > 0 &&
         // percentageProfit <= 3
@@ -117,10 +121,11 @@ export const identifyCandleWicks = async () => {
       }
     }
   }
+  bot.sendMessage(chatId, JSON.stringify(output));
   return output;
 };
 
 // Run main function
 identifyCandleWicks();
 
-// module.exports = fetchSymbols;
+module.exports = identifyCandleWicks;

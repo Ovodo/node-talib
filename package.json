@@ -46,13 +46,18 @@
     "node": ">=8.16.0"
   },
   "dependencies": {
+    "axe": "^12.2.3",
     "axios": "^1.6.2",
-    "nan": "^2.17.0",
-    "talib": "^1.1.5",
+    "bree": "^9.2.2",
+    "cabin": "^13.2.5",
     "mongodb": "^6.3.0",
+    "nan": "^2.17.0",
     "next": "14.0.1",
+    "node-telegram-bot-api": "^0.64.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "signale": "^1.4.0",
+    "talib": "^1.1.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
