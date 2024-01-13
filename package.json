@@ -38,7 +38,7 @@
     "clean": "node ./src/lib/clean.js",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start && node bree",
     "lint": "next lint"
   },
   "main": "build/Release/talib.node",
