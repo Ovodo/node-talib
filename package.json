@@ -36,9 +36,9 @@
   "scripts": {
     "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
     "clean": "node ./src/lib/clean.js",
-    "dev": "next dev",
+    "dev": "next dev  && node bree",
     "build": "next build",
-    "start": "next start && node bree",
+    "start": "next start",
     "lint": "next lint"
   },
   "main": "build/Release/talib.node",
