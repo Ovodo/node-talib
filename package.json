@@ -34,7 +34,7 @@
     "win32"
   ],
   "scripts": {
-    "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
+    "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build && node bree.js",
     "clean": "node ./src/lib/clean.js",
     "dev": "node bree.js && next dev ", 
     "build": "next build",
