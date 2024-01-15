@@ -20,7 +20,7 @@ const fetchMarketDataWithRetry = async (
 ) => {
   try {
     const res = await axios.get(
-      `${apiEndpoint}/fapi/v1/markPriceKlines?symbol=${symbol}&interval=4h&limit=3`,
+      `${apiEndpoint}/fapi/v1/markPriceKlines?symbol=${symbol}&interval=4h&limit=5`,
       {
         timeout: 150000, // Set the timeout to 15 seconds (adjust as needed)
       }

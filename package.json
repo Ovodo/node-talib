@@ -36,7 +36,7 @@
   "scripts": {
     "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
     "clean": "node ./src/lib/clean.js",
-    "dev": "next dev  && node bree",
+    "dev": "node bree.js && next dev ", 
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
