@@ -19,6 +19,7 @@ const startTime = endTime - numDays * 24 * 60 * 60 * 1000;
 const params = {
   symbol: "",
   interval: timeframe,
+
   startTime: startTime,
   endTime: endTime,
   limit: 1,

@@ -1,5 +1,5 @@
 const fs = require("fs");
-const fetchSymbols = require("./market"); // Adjust the path to point to the file containing the fetchSymbols function
+const fetchSymbols = require("./greenStreak"); // Adjust the path to point to the file containing the fetchSymbols function
 
 const storeSymbolsInFile = async () => {
   try {

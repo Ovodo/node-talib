@@ -1,10 +1,13 @@
 const axios = require("axios");
 const crypto = require("crypto");
+require("dotenv").config();
+
+// Your application code goes here
 
 const apiKey =
-  "mRK8IqXn6Hwbs5USyR3rNguvAuqWrsEpgqFgaFmqokZ284voEvIVkS8Gz2IUaO6z";
+  "GTD47iEP8b8LvST0Hihf4gU9u3soSuk2Niriz2K7vwJH0Jo6R31lHUa6av9zHjUW";
 const apiSecret =
-  "esrjkhwbTQtTM5bvjovpgKnMsWoOPVo2SQ5wI763jnOO6syblnV3cp2veh1ePlig";
+  "ywhkhdA8XPI3SgM8Cyib6YQm5clTUZMSDRtra7NEN4aEDlCNbJzxV2FtLo0yvaMF";
 
 const timestamp = Date.now();
 
@@ -26,23 +29,30 @@ const signature = crypto
   .digest("hex");
 
 // Set up the Binance API endpoint
-const apiEndpoint = "https://fapi.binance.com";
+// const apiEndpoint = "https://fapi.binance.com";
+const apiEndpoint = "https://api.bybit.com";
 
 // Define the request configuration
 const config = {
   headers: {
     "Content-Type": "application/json",
     "X-MBX-APIKEY": apiKey,
+    "X-BAPI-SIGN": signature,
+    "X-BAPI-TIMESTAMP": timestamp,
+    "X-BAPI-RECV-WINDOW": 50000,
+    "X-BAPI-SIGN-TYPE": 2,
   },
 };
 
 // Define the endpoint for account information
-const endpoint = "/fapi/v1/income";
+// const endpoint = "/fapi/v1/income";
+const endpoint = "/v5/account/wallet-balance?accountType=UNIFIED&coin=APT";
 
 // Make the request
 axios
   .get(
-    apiEndpoint + endpoint + "?" + queryString + "&signature=" + signature,
+    // apiEndpoint + endpoint + "?" + queryString + "&signature=" + signature,
+    apiEndpoint + endpoint,
     config
   )
   .then((response) => {
