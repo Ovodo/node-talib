@@ -95,7 +95,7 @@ const identifyCandleWicks = async () => {
       // Check for upper wick criteria (over 5%) and green candle close (0% to 1% profit)
       if (
         lowerWick / low >
-        0.07105
+        0.05105
         // &&
         // percentageProfit > 0 &&
         // percentageProfit <= 3

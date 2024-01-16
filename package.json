@@ -34,11 +34,11 @@
     "win32"
   ],
   "scripts": {
-    "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build && node bree.js",
+    "install": "node ./src/lib/build.js && node-gyp configure && node-gyp build",
     "clean": "node ./src/lib/clean.js",
-    "dev": "node bree.js && next dev ", 
+    "dev": "next dev ", 
     "build": "next build",
-    "start": "next start",
+    "start": "next start && node bree.js",
     "lint": "next lint"
   },
   "main": "build/Release/talib.node",
