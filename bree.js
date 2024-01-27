@@ -19,7 +19,7 @@ const logger = new Axe({
 const bree = new Bree({
   // logger: new Cabin({ logger }),
   logger: false,
-  jobs: [{ name: "log", interval: "every 2 hours", timeout: 0 }],
+  jobs: [{ name: "log", interval: "every 30 seconds", timeout: 0 }],
 });
 
 // await bree.start();
